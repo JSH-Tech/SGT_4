@@ -29,13 +29,13 @@ namespace SGT_4.Models
             compteur++;
         }
 
-        public string Titre
+        public string? Titre
         {
             get { return this.titre; }
             set { this.titre = value; }
         }
 
-        public string Commentaire
+        public string? Commentaire
         {
             get { return this.commentaire; }
             set { this.commentaire = value; }
