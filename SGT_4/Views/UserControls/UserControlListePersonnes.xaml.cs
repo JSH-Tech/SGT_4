@@ -1,6 +1,4 @@
-﻿using MaterialDesignThemes.Wpf;
-using SGT_4.Views.Fenetres;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,19 +16,13 @@ using System.Windows.Shapes;
 namespace SGT_4.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for MenuUC.xaml
+    /// Interaction logic for UserControlListePersonnes.xaml
     /// </summary>
-    public partial class MenuUC : UserControl
+    public partial class UserControlListePersonnes : UserControl
     {
-        public MenuUC()
+        public UserControlListePersonnes()
         {
             InitializeComponent();
-        }
-
-        private void btn_personne_Click(object sender, RoutedEventArgs e)
-        {
-            FenetreListePersonne fenetreListePersonnes = new FenetreListePersonne();
-            fenetreListePersonnes.Show();
         }
     }
 }
