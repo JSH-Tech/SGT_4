@@ -28,7 +28,7 @@
                 </ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btn_personne" Grid.Row="0" Grid.Column="0" Content="Liste personnes" Width="155"/>
+            <Button x:Name="btn_personne" Grid.Row="0" Grid.Column="0" Content="Liste personnes" Width="155" Click="btn_personne_Click"/>
             <Button x:Name="btn_Ajoutpersonne" Grid.Row="0" Grid.Column="1" Content="Ajouter personnes" Width="155"/>
         </Grid>
 
