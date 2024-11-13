@@ -15,9 +15,11 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Views\UserControls\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bootstrap.Datepicker" Version="1.8.0.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
   </ItemGroup>
 

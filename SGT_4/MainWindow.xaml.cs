@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using SGT_4.Styles;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,6 +27,13 @@ namespace SGT_4
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void btn_ticket_Click(object sender, RoutedEventArgs e)
+        {
+            FenetresTickets fenetresTickets = new FenetresTickets();
+            fenetresTickets.Show();
         }
     }
 }

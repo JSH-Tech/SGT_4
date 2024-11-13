@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SGT_4.Views.UserControls
+namespace SGT_4.Styles
 {
     /// <summary>
-    /// Interaction logic for UserControlListePersonnes.xaml
+    /// Interaction logic for FenetresTickets.xaml
     /// </summary>
-    public partial class UserControlListePersonnes : UserControl
+    public partial class FenetresTickets : Window
     {
-        public UserControlListePersonnes()
+        public FenetresTickets()
         {
             InitializeComponent();
         }

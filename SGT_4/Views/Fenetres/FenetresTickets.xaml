@@ -1,0 +1,69 @@
+﻿<Window x:Class="SGT_4.Styles.FenetresTickets"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SGT_4.Styles"
+        mc:Ignorable="d"
+        Style="{StaticResource MaterialDesignWindow}"
+        Title="FenetresTickets" Height="768" Width="1018">
+    <Grid>
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel >
+                <TextBox Name="textBox_titre" Height="52" materialDesign:HintAssist.Hint="Entrer le titre" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
+                <TextBox Name="textBox_commentaire" Height="52" materialDesign:HintAssist.Hint="Entrer le commentaire" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
+                <ComboBox Name="ComboBox_type" materialDesign:HintAssist.Hint="Type" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
+                    <ComboBoxItem Content="Panne" Name="typePanne"/>
+                    <ComboBoxItem Content="Service" Name="typeService"/>
+                </ComboBox>
+                <ComboBox Name="ComboBox_Categorie" materialDesign:HintAssist.Hint="Categorie" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
+                    <ComboBoxItem Content="Maetriel" Name="CatMaterie"/>
+                    <ComboBoxItem Content="Logiciel" Name="CatLogiciel"/>
+                    <ComboBoxItem Content="Reseau" Name="CatReseau"/>
+                </ComboBox>
+                <ComboBox Name="ComboBox_Priorite" materialDesign:HintAssist.Hint="Priorite" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
+                    <ComboBoxItem Content="Basse" Name="priorBasse"/>
+                    <ComboBoxItem Content="Moyenne" Name="priorMoy"/>
+                    <ComboBoxItem Content="Haute" Name="priorHaut"/>
+                    <ComboBoxItem Content="Critique" Name="priorCritiquw"/>
+                </ComboBox>
+                <ComboBox Name="ComboBox_statut" materialDesign:HintAssist.Hint="Statut" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
+                    <ComboBoxItem Content="Ouvert" Name="statuOuvert"/>
+                    <ComboBoxItem Content="Fermer" Name="statuFerme"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Button Name="btn_Ajouter" Margin="0,50,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Ajouter" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
+                <Button Name="btn_Modifier" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Modifier" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
+                <Button Name="btn_Supprimer" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Supprimer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
+                <Button Name="btn_Fermer" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Fermer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
+                
+            </StackPanel>
+            <ListView x:Name="listViewsTickets" ItemsSource="{Binding Items1}" Grid.Row="1" Grid.ColumnSpan="2">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Titre" DisplayMemberBinding="{Binding Titre}"  Width="100"/>
+                        <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="100"/>
+                        <GridViewColumn Header="Catégorie" DisplayMemberBinding="{Binding Categorie}" Width="120"/>
+                        <GridViewColumn Header="Priorité" DisplayMemberBinding="{Binding Priorite}" Width="120"/>
+                        <GridViewColumn Header="Statut" DisplayMemberBinding="{Binding Statut}" Width="100"/>
+                        <GridViewColumn Header="Création" DisplayMemberBinding="{Binding DateCreation}" Width="120"/>
+                        <GridViewColumn Header="Fermeture" DisplayMemberBinding="{Binding DateFermeture}" Width="130"/>
+                        <GridViewColumn Header="Commentaire" DisplayMemberBinding="{Binding Commentaire}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+    </Grid>
+</Window>

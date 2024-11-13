@@ -5,10 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Style="{StaticResource MaterialDesignWindow}"
         xmlns:local="clr-namespace:SGT_4"
-        xmlns:MyUC="clr-namespace:SGT_4.Views.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF673AB7">
+        Title="Menu Principal" Height="450" Width="800" Background="#FF673AB7">
     <Grid>
-        <MyUC:MenuUC/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Content="Gestionnaire de ticket" Style="{StaticResource StyleLabel}" Grid.Row="0" Grid.ColumnSpan="2" />
+            <Image Grid.Column="0" Grid.Row="1" Source="/Images/personne.png"/>
+            <Image Grid.Column="1" Grid.Row="1" Source="/Images/ticket.png"/>
+
+            <Button x:Name="btn_personne" Grid.Row="2" Grid.Column="0" Content="Liste personnes" Width="155"/>
+
+
+            <Button x:Name="btn_ticket" Grid.Row="2" Grid.Column="1" Content="Liste tickets" Width="150" Click="btn_ticket_Click"/>
+
+        </Grid>
     </Grid>
 </Window>

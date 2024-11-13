@@ -13,11 +13,11 @@
         <Setter Property="Width" Value="50"/>
     </Style>
 
-    <Style x:Key="styleListView" TargetType="ListView">
-        <Setter Property="Height" Value="500"/>
+    <Style x:Key="styleListHeader" TargetType="DataGridRowHeader">
+        <Setter Property="Width" Value="100"/>
     </Style>
 
     <Style x:Key="rowlistPersonneHeight" TargetType="RowDefinition">
-        <Setter Property="Height" Value="400"/>
+        <Setter Property="Height" Value="300"/>
     </Style>
 </ResourceDictionary>
