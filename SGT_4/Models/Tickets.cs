@@ -6,23 +6,59 @@ using System.Threading.Tasks;
 
 namespace SGT_4.Models
 {
-    internal class Tickets
+    //*****************************// 
+    // Numéro du groupe : // 
+    //Yao Josue Abotsidia 
+    //Brenda Lydie Guekam Fongang
+    //Adoté Jovani Akue-Goeh
+    //*******************************// 
+    public class Tickets
     {
-        private int compteur = 1;
+        private static int compteur = 1;
         private int id;
         private string? titre;
+        private string? type;
+        private string? categorie;
+        private string? priorite;
+        private string? status;
         private string? commentaire;
         private DateOnly dateCreation;
-        private DateOnly dateFertmeture;
-        Personnes? personne;
-        public Tickets(string? titre, string? commentaire, DateOnly dateCreation, DateOnly dateFertmeture)
+        private DateOnly dateFermeture= DateOnly.MinValue;
+        Personnes? personneT;
+
+        public Tickets(string? titre, string? type, string? categorie, string? priorite, string? status, string? commentaire, DateOnly dateCreation, DateOnly dateFermeture, Personnes? personneT = null)
         {
-            this.id=compteur;
-            this.titre = Titre;
-            this.commentaire = Commentaire;
-            this.dateCreation = DateCreation;
-            this.dateFertmeture = DateFertmeture;
-            compteur++;
+            Titre = titre;
+            Type = type;
+            Categorie = categorie;
+            Priorite= priorite;
+            Status = status;
+            Commentaire = commentaire;
+            DateCreation = dateCreation;
+            DateFermeture = dateFermeture;
+            PersonneT = personneT;
+        }
+
+        public string? Status
+        {
+            get { return this.status; }
+            set { this.status = value; }
+        }
+        public string? Priorite
+        {
+            get { return this.priorite; }
+            set { this.priorite = value; }
+        }
+
+        public string? Categorie
+        {
+            get { return this.categorie; }
+            set { this.categorie = value; }
+        }
+        public string? Type
+        {
+            get { return this.type; }
+            set { this.type = value; }
         }
 
         public string? Titre
@@ -43,10 +79,16 @@ namespace SGT_4.Models
             set { this.dateCreation = value; }
         }
 
-        public DateOnly DateFertmeture
+        public DateOnly DateFermeture
         {
-            get { return this.dateFertmeture; }
-            set { this.dateFertmeture = value; }
+            get { return this.dateFermeture; }
+            set { this.dateFermeture = value; }
+        }
+
+        public Personnes? PersonneT
+        {
+            get { return this.personneT; }
+            set { this.personneT = value; }
         }
     }
 }

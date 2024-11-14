@@ -1,0 +1,59 @@
+﻿<Window 
+       
+        x:Class="SGT_4.Views.Fenetres.FenetrePersonne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGT_4.Views.Fenetres"
+        mc:Ignorable="d"   
+        Title="FenetrePersonne" Height="550" Width="1200">
+    <Grid>
+        <!--//*****************************// 
+        // Numéro du groupe : // 
+        //Yao Josue Abotsidia 
+        //Brenda Lydie Guekam Fongang
+        //Adoté Jovani Akue-Goeh
+        //*******************************//-->
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition MaxHeight="90"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="580"/>
+            <ColumnDefinition Width="580"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="listViewsPersonne" Grid.Row="0" Grid.Column="0" SelectionChanged="listViewsPersonne_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Nom}" Width="100"/>
+                    <GridViewColumn Header="Courriel" DisplayMemberBinding="{Binding Courriel}" Width="120"/>
+                    <GridViewColumn Header="Departement" DisplayMemberBinding="{Binding Departement}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <Label  Content="Ajout d'une personne" Margin="200,10,60,0" Height="40" FontSize="20" FontWeight="Bold" Foreground="BlueViolet"/>
+            <StackPanel  Orientation="Horizontal">
+                <Label  Content="Nom" Margin="0,10,0,0" Height="50" FontSize="20"/>
+                <TextBox Name="tbNom"  FontSize="20" Margin="95,10,30,30" Height="50" Width="350"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal">
+                <Label  Content="Courriel" Margin="0,10,0,0" Height="50" FontSize="20"/>
+                <TextBox Name="tbCourriel"  FontSize="20" Margin="70,0,30,30" Height="50" Width="350"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal">
+                <Label  Content="Département" Margin="0,10,0,0" Height="50" FontSize="20"/>
+                <TextBox Name="tbDepartement" FontSize="20" Margin="20,10,30,30" Height="50" Width="350"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="stylePanel" Orientation="Horizontal" Grid.Row="1" MaxHeight="90"  Grid.ColumnSpan="2">
+            <Button Name="btnAjouter" Content="Ajouter" Width="100" Height="40"   Grid.Column="1" Margin="100,0,30,15" Click="btnAjouter_Click" />
+            <Button Name="btnModifier" Content="Modifier" Width="100" Height="40"   Grid.Column="1" Margin="80,0,70,15" Click="btnModifier_Click"/>
+            <Button Name="btnSupprimer" Content="Supprimer" Width="100" Height="40"   Margin="60,0,70,15" Grid.Column="2" Click="btnSupprimer_Click"/>
+            <Button Name="btnFermer" Content="Fermer" Width="100" Height="40"  Margin="50,0,0,15" Grid.Column="2" Click="btnFermer_Click"/>
+            <Button Name="btnReinitialiser" Content="Reinitialiser" Width="114" Height="40"  Margin="80,0,0,15" Grid.Column="2" Click="btnReinitialiser_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -7,9 +7,18 @@
         xmlns:local="clr-namespace:SGT_4.Styles"
         mc:Ignorable="d"
         Style="{StaticResource MaterialDesignWindow}"
-        Title="FenetresTickets" Height="768" Width="1018">
+        Title="FenetresTickets" Height="966" Width="1112">
+        
+
     <Grid>
         <Grid>
+
+            <!--//*****************************// 
+            // Numéro du groupe : // 
+            //Yao Josue Abotsidia 
+            //Brenda Lydie Guekam Fongang
+            //Adoté Jovani Akue-Goeh
+            //*******************************//-->
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -17,17 +26,17 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="450"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel >
-                <TextBox Name="textBox_titre" Height="52" materialDesign:HintAssist.Hint="Entrer le titre" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
-                <TextBox Name="textBox_commentaire" Height="52" materialDesign:HintAssist.Hint="Entrer le commentaire" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
+                <TextBox Name="textBox_titre" Height="50" materialDesign:HintAssist.Hint="Entrer le titre" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
+                <TextBox Name="textBox_commentaire" Height="50" materialDesign:HintAssist.Hint="Entrer le commentaire" Style="{StaticResource MaterialDesignOutlinedTextBox}" Margin="0,10,0,0"   />
                 <ComboBox Name="ComboBox_type" materialDesign:HintAssist.Hint="Type" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
                     <ComboBoxItem Content="Panne" Name="typePanne"/>
                     <ComboBoxItem Content="Service" Name="typeService"/>
                 </ComboBox>
                 <ComboBox Name="ComboBox_Categorie" materialDesign:HintAssist.Hint="Categorie" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
-                    <ComboBoxItem Content="Maetriel" Name="CatMaterie"/>
+                    <ComboBoxItem Content="Materiel" Name="CatMaterie"/>
                     <ComboBoxItem Content="Logiciel" Name="CatLogiciel"/>
                     <ComboBoxItem Content="Reseau" Name="CatReseau"/>
                 </ComboBox>
@@ -37,29 +46,37 @@
                     <ComboBoxItem Content="Haute" Name="priorHaut"/>
                     <ComboBoxItem Content="Critique" Name="priorCritiquw"/>
                 </ComboBox>
-                <ComboBox Name="ComboBox_statut" materialDesign:HintAssist.Hint="Statut" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
-                    <ComboBoxItem Content="Ouvert" Name="statuOuvert"/>
-                    <ComboBoxItem Content="Fermer" Name="statuFerme"/>
-                </ComboBox>
+               
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <Button Name="btn_Ajouter" Margin="0,50,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Ajouter" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
-                <Button Name="btn_Modifier" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Modifier" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
-                <Button Name="btn_Supprimer" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Supprimer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
-                <Button Name="btn_Fermer" Margin="0,20,0,0" Grid.Column="1" Width="150" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Fermer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" />
                 
+                <ComboBox Name="ComboBox_statut" materialDesign:HintAssist.Hint="Statut" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold"  Margin="0,10,0,0">
+                    <ComboBoxItem Content="Ouvert"/>
+                    <ComboBoxItem Content="Fermer"/>
+                </ComboBox>
+                <DatePicker Name="DatePicker_dateCreation" Height="50" materialDesign:HintAssist.Hint="Entrer la date de création" Style="{StaticResource MaterialDesignFilledDatePicker}" Margin="0,10,0,0" />
+                <DatePicker Name="DatePicker_dateFermeture" Height="50" materialDesign:HintAssist.Hint="Entrer la date de Fermeture" Style="{StaticResource MaterialDesignFilledDatePicker}" Margin="0,10,0,0" />
+                <ComboBox Name="ComboBox_personne" materialDesign:HintAssist.Hint="Personne" Style="{StaticResource MaterialDesignOutlinedComboBox}" FontWeight="Bold" Margin="0,10,0,0" DisplayMemberPath="Nom" ItemsSource="{Binding ListePersonnes}" SelectedItem="{Binding SelectedPersonne}"></ComboBox>
+                <DockPanel Margin="0,2,10,0">
+                    <Button Name="btn_Ajouter" Margin="10,20,10,0" Grid.Column="1" Width="85" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Ajouter" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" Click="btn_Ajouter_Click" />
+                    <Button Name="btn_Modifier" Margin="10,20,10,0" Grid.Column="1" Width="90" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Modifier" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" Click="btn_Modifier_Click" />
+                    <Button Name="btn_Supprimer" Margin="10,20,0,0" Grid.Column="1" Width="100" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Supprimer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" Click="btn_Supprimer_Click" />
+                    <Button Name="btn_Reinitialser" Margin="10,20,0,0" Grid.Column="1" Width="120" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Reinitialiser" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" Click="btn_Reinitialser_Click" />
+                    <Button Name="btn_Fermer" Margin="0,20,0,0" Grid.Column="1" Width="80" Height="40" materialDesign:ButtonProgressAssist.IsIndeterminate="False" materialDesign:ButtonProgressAssist.IsIndicatorVisible="True" materialDesign:ButtonProgressAssist.Value="-1" Content="Fermer" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" FontWeight="Bold" Click="btn_Fermer_Click" />
+                </DockPanel>
             </StackPanel>
-            <ListView x:Name="listViewsTickets" ItemsSource="{Binding Items1}" Grid.Row="1" Grid.ColumnSpan="2">
+            <ListView x:Name="listViewsTickets" SelectionChanged="listViewsTickets_ligneSelectionne" Grid.Row="1" Grid.ColumnSpan="2">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Titre" DisplayMemberBinding="{Binding Titre}"  Width="100"/>
+                        <GridViewColumn Header="Titre" DisplayMemberBinding="{Binding Titre}" Width="100"/>
                         <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" Width="100"/>
                         <GridViewColumn Header="Catégorie" DisplayMemberBinding="{Binding Categorie}" Width="120"/>
                         <GridViewColumn Header="Priorité" DisplayMemberBinding="{Binding Priorite}" Width="120"/>
-                        <GridViewColumn Header="Statut" DisplayMemberBinding="{Binding Statut}" Width="100"/>
+                        <GridViewColumn Header="Statut" DisplayMemberBinding="{Binding Status}" Width="100"/>
                         <GridViewColumn Header="Création" DisplayMemberBinding="{Binding DateCreation}" Width="120"/>
                         <GridViewColumn Header="Fermeture" DisplayMemberBinding="{Binding DateFermeture}" Width="130"/>
                         <GridViewColumn Header="Commentaire" DisplayMemberBinding="{Binding Commentaire}" Width="150"/>
+                        <GridViewColumn Header="Personne" DisplayMemberBinding="{Binding PersonneT.Nom}" Width="150"/>
                     </GridView>
                 </ListView.View>
             </ListView>

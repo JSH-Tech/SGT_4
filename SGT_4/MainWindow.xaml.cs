@@ -1,4 +1,5 @@
 ﻿using SGT_4.Styles;
+using SGT_4.Views.Fenetres;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,8 +16,8 @@ namespace SGT_4
     //*****************************// 
     // Numéro du groupe : // 
     //Yao Josue Abotsidia 
-    //NOM_prenom2 
-    //NOM_prenom3 
+    //Brenda Lydie Guekam Fongang
+    //Adoté Jovani Akue-Goeh
     //*******************************// 
 
     /// <summary>
@@ -34,6 +35,12 @@ namespace SGT_4
         {
             FenetresTickets fenetresTickets = new FenetresTickets();
             fenetresTickets.Show();
+        }
+
+        private void btn_personne_Click(object sender, RoutedEventArgs e)
+        {
+            FenetrePersonne fenetrePersonne = new FenetrePersonne();
+            fenetrePersonne.Show();
         }
     }
 }

@@ -20,4 +20,9 @@
     <Style x:Key="rowlistPersonneHeight" TargetType="RowDefinition">
         <Setter Property="Height" Value="300"/>
     </Style>
+    <Style x:Key="stylePanel" TargetType="StackPanel">
+        <Setter Property="Background" Value="BlueViolet"/>
+    </Style>
+
+
 </ResourceDictionary>
